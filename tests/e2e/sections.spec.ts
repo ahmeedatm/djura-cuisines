@@ -26,7 +26,8 @@ test('une photo de la galerie s’ouvre en grand puis se ferme', async ({ page }
   await expect(visionneuse).toHaveCount(0);
 });
 
-test('le bouton WhatsApp collant apparaît après défilement sur mobile', async ({ page }) => {
+test('le bouton WhatsApp collant apparaît après défilement sur mobile', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === 'desktop', 'barre collante réservée au mobile');
   await page.goto('./');
   await page.mouse.wheel(0, 1500);
   await expect(page.locator('aw-sticky-cta').getByRole('link', { name: /WhatsApp/ })).toBeInViewport();

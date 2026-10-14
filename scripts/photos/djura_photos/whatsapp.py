@@ -84,12 +84,20 @@ def importer(chat_jid: str, depuis: str, sortie: Path) -> int:
     return 1 if echecs else 0
 
 
-if __name__ == "__main__":
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--chat-jid", default=os.environ.get(VARIABLE_CHAT_JID), help=f"défaut : ${VARIABLE_CHAT_JID}")
     parser.add_argument("--depuis", required=True, help="AAAA-MM-JJ")
     parser.add_argument("--sortie", type=Path, required=True)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if not args.chat_jid:
         parser.error(f"JID de la discussion manquant : --chat-jid ou variable {VARIABLE_CHAT_JID}")
-    sys.exit(importer(args.chat_jid, args.depuis, args.sortie))
+    try:
+        return importer(args.chat_jid, args.depuis, args.sortie)
+    except (RuntimeError, ValueError, subprocess.SubprocessError, OSError) as erreur:
+        print(f"erreur : {erreur}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

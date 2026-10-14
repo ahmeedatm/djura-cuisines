@@ -1,5 +1,6 @@
 import pytest
 
+from djura_photos import whatsapp
 from djura_photos.whatsapp import nom_local, parse_ids, requete_sql_images
 
 
@@ -42,3 +43,16 @@ def test_parse_ids_refuse_un_id_bizarre():
 
 def test_nom_local_numerote_sur_deux_chiffres():
     assert nom_local(3) == "03.jpg"
+
+
+@pytest.mark.parametrize("erreur", [RuntimeError("ssh nas a échoué : hors ligne"), ValueError("identifiants de message inattendus")])
+def test_main_sort_avec_le_code_2_sans_traceback(monkeypatch, capsys, tmp_path, erreur):
+    def echoue(*_args, **_kwargs):
+        raise erreur
+
+    monkeypatch.setattr(whatsapp, "_ssh", echoue)
+    code = whatsapp.main(["--chat-jid", "1@lid", "--depuis", "2026-10-14", "--sortie", str(tmp_path / "out")])
+    sortie = capsys.readouterr()
+    assert code == 2
+    assert "erreur :" in sortie.err
+    assert "Traceback" not in sortie.err
