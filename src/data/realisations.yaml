@@ -1,0 +1,4 @@
+# Une entrée par photo, dans l'ordre d'affichage.
+# fichier : nom dans src/assets/images/realisations/ (minuscules, chiffres, tirets)
+# categorie : cuisine ou dressing
+photos: []
