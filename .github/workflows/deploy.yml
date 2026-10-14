@@ -9,10 +9,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency: { group: pages, cancel-in-progress: false }
-
 jobs:
   deploy:
+    concurrency: { group: pages, cancel-in-progress: false }
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: { name: github-pages, url: '${{ steps.pages.outputs.page_url }}' }
