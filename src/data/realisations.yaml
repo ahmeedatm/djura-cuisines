@@ -3,10 +3,10 @@
 # categorie : cuisine ou dressing
 photos:
   - fichier: cuisine-ilot-marbre-facades-beige.jpg
-    legende: Cuisine en L avec îlot en marbre, façades beige et four encastré
+    legende: Cuisine en L avec îlot effet marbre, façades beiges et four encastré
     categorie: cuisine
   - fichier: cuisine-ilot-marbre-plan-de-travail-chute.jpg
-    legende: Cuisine avec îlot à deux niveaux en marbre, façades beige
+    legende: Cuisine avec îlot à deux niveaux effet marbre, façades beiges
     categorie: cuisine
   - fichier: cuisine-bleu-canard-bois-plan-noir.jpg
     legende: Cuisine bleu canard et bois, plan de travail noir, crédence marbre
@@ -42,7 +42,7 @@ photos:
     legende: Cuisine blanche avec plan de travail en bois, îlot et crédence marbre
     categorie: cuisine
   - fichier: cuisine-blanche-laquee-poignees-noires.jpg
-    legende: Cuisine blanche laquée à poignées noires, four et hotte inox
+    legende: Cuisine blanche laquée à poignées noires, four noir et hotte inox
     categorie: cuisine
   - fichier: dressing-entree-penderie-bois-gris.jpg
     legende: Meuble d'entrée avec penderie grise, patères et casiers en bois
