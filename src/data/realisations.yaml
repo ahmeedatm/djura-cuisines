@@ -1,4 +1,55 @@
 # Une entrée par photo, dans l'ordre d'affichage.
 # fichier : nom dans src/assets/images/realisations/ (minuscules, chiffres, tirets)
 # categorie : cuisine ou dressing
-photos: []
+photos:
+  - fichier: cuisine-ilot-marbre-facades-beige.jpg
+    legende: Cuisine en L avec îlot en marbre, façades beige et four encastré
+    categorie: cuisine
+  - fichier: cuisine-ilot-marbre-plan-de-travail-chute.jpg
+    legende: Cuisine avec îlot à deux niveaux en marbre, façades beige
+    categorie: cuisine
+  - fichier: cuisine-bleu-canard-bois-plan-noir.jpg
+    legende: Cuisine bleu canard et bois, plan de travail noir, crédence marbre
+    categorie: cuisine
+  - fichier: cuisine-ouverte-bois-clair-table-repas.jpg
+    legende: Cuisine ouverte avec meubles hauts en bois clair et espace repas
+    categorie: cuisine
+  - fichier: cuisine-blanche-bois-credence-marbre.jpg
+    legende: Cuisine en L, hauts blancs brillants, bas en bois, plan noir
+    categorie: cuisine
+  - fichier: cuisine-blanche-en-u-plan-noir.jpg
+    legende: Cuisine blanche en U avec plan de travail noir et péninsule
+    categorie: cuisine
+  - fichier: cuisine-bar-bois-facades-blanches.jpg
+    legende: Cuisine avec bar en bois suspendu, façades blanches, plan noir
+    categorie: cuisine
+  - fichier: cuisine-bar-bois-niches-facades-grises.jpg
+    legende: Cuisine ouverte, bar en bois avec niches, façades grises
+    categorie: cuisine
+  - fichier: cuisine-bar-bois-suspensions.jpg
+    legende: Cuisine ouverte avec bar en bois, façades blanches et grises, suspensions
+    categorie: cuisine
+  - fichier: cuisine-beige-bois-bandeau-lumineux.jpg
+    legende: Cuisine beige et bois clair, plan noir, réfrigérateur inox
+    categorie: cuisine
+  - fichier: cuisine-anthracite-bois-frigo-inox.jpg
+    legende: Cuisine anthracite et bois clair, colonne avec four et réfrigérateur
+    categorie: cuisine
+  - fichier: cuisine-anthracite-ilot-suspensions.jpg
+    legende: Cuisine anthracite avec îlot en bois clair et trois suspensions
+    categorie: cuisine
+  - fichier: cuisine-blanche-plan-bois-ilot.jpg
+    legende: Cuisine blanche avec plan de travail en bois, îlot et crédence marbre
+    categorie: cuisine
+  - fichier: cuisine-blanche-laquee-poignees-noires.jpg
+    legende: Cuisine blanche laquée à poignées noires, four et hotte inox
+    categorie: cuisine
+  - fichier: dressing-entree-penderie-bois-gris.jpg
+    legende: Meuble d'entrée avec penderie grise, patères et casiers en bois
+    categorie: dressing
+  - fichier: dressing-portes-beiges-poignees-noires.jpg
+    legende: Dressing à portes beiges, longues poignées noires et niche ouverte
+    categorie: dressing
+  - fichier: dressing-commode-meuble-haut.jpg
+    legende: Commode à six tiroirs et meuble haut, façades grises et bois clair
+    categorie: dressing
