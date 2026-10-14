@@ -22,11 +22,15 @@ _NUMERO = re.compile(r"\d{1,3}")
 
 CONSIGNE = (
     "This is a real photo of a kitchen or wardrobe installed by a cabinet maker. "
+    "Edit this exact photo, do not regenerate or redraw the scene. "
     "Remove clutter only: fridge magnets, protective plastic film on doors, loose objects on worktops, "
     "cables, tools, cardboard and chairs that hide the furniture. Make the lighting soft, even and bright, "
     "like a professional interior photo, with accurate neutral white balance. "
-    "Do not change the cabinets, their color, material, wood grain, handles, worktop, appliances, "
-    "layout, proportions or the room. Do not add any object. Keep the same framing."
+    "Do not change the furniture at all: same cabinet colors, materials, wood grain, "
+    "handles, worktop color and pattern (do not turn a wood or beige worktop into marble), "
+    "appliances, backsplash, floor, ceiling, windows, number and size of doors and drawers, "
+    "layout, proportions and the room. Do not add any object, light fixture or decoration. "
+    "Keep exactly the same camera angle, framing, crop and aspect ratio: do not zoom, widen or reframe."
 )
 
 
