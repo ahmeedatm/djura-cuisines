@@ -1,6 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import StickyCTA from '~/components/widgets/StickyCTA.astro';
+import ContactDjura from '~/components/widgets/ContactDjura.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE } from 'astrowind:config';
 import { ENTREPRISE } from '~/config/entreprise';
@@ -34,6 +39,43 @@ const metadata = {
       {ENTREPRISE.nom}
       <span class="tifinagh block mt-2 text-3xl md:text-4xl text-muted" lang="kab-Tfng">{ENTREPRISE.nomTifinagh}</span>
     </Fragment>
-    <Fragment slot="subtitle">{ENTREPRISE.accroche}. Conception, fabrication et pose.</Fragment>
+    <Fragment slot="subtitle">{ENTREPRISE.accroche}. {ENTREPRISE.promesse}</Fragment>
   </Hero>
+
+  <Features
+    id="savoir-faire"
+    title="Notre savoir-faire"
+    subtitle="Chaque meuble est dessiné pour votre pièce, fabriqué puis posé par notre équipe."
+    columns={2}
+    items={[
+      {
+        title: 'Cuisines équipées',
+        description: 'Cuisines en L, en U ou avec îlot, plans de travail, électroménager intégré : on conçoit tout à vos mesures.',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: 'Dressings sur mesure',
+        description: 'Rangements du sol au plafond, portes, tiroirs et éclairage, adaptés à chaque recoin.',
+        icon: 'tabler:hanger',
+      },
+    ]}
+  />
+
+  <Gallery id="realisations" title="Nos réalisations" subtitle="Des cuisines et dressings posés chez nos clients." images={realisations} columns={3} />
+
+  <Steps
+    id="etapes"
+    title="Comment ça se passe"
+    items={[
+      { title: 'Visite et prise de mesures', description: 'On vient chez vous, on écoute vos envies et on mesure la pièce.', icon: 'tabler:ruler-measure' },
+      { title: 'Plan et devis', description: 'On vous propose un plan et un devis clair, sans surprise.', icon: 'tabler:pencil' },
+      { title: 'Fabrication', description: 'Vos meubles sont fabriqués sur mesure dans notre atelier.', icon: 'tabler:hammer' },
+      { title: 'Pose', description: 'Notre équipe installe tout et vous rend une pièce propre.', icon: 'tabler:check' },
+    ]}
+    callToAction={{ variant: 'primary', text: 'Demander un devis sur WhatsApp', href: lienDevis, target: '_blank', icon: 'tabler:brand-whatsapp' }}
+  />
+
+  <ContactDjura />
+
+  <StickyCTA text="Devis sur WhatsApp" label="Réponse rapide" href={lienDevis} target="_blank" icon="tabler:brand-whatsapp" />
 </Layout>

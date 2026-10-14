@@ -1,3 +1,4 @@
+import { ENTREPRISE } from './config/entreprise';
 import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
@@ -13,6 +14,6 @@ export const headerData = {
 export const footerData = {
   links: [],
   secondaryLinks: [],
-  socialLinks: [],
-  footNote: '',
+  socialLinks: [{ ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: ENTREPRISE.facebook }],
+  footNote: `${ENTREPRISE.nom} · ${ENTREPRISE.adresse.quartier}, ${ENTREPRISE.adresse.ville}`,
 };

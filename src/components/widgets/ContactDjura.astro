@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { ENTREPRISE } from '~/config/entreprise';
+import { adresseTexte, itineraireUrl, telUrl, whatsappUrl } from '~/utils/contact';
+
+const lignes = [
+  { icone: 'tabler:phone', texte: ENTREPRISE.telephoneAffiche, href: telUrl(ENTREPRISE.telephone) },
+  { icone: 'tabler:brand-whatsapp', texte: 'Écrire sur WhatsApp', href: whatsappUrl(ENTREPRISE.telephone, ENTREPRISE.messageDevis) },
+  { icone: 'tabler:map-pin', texte: `Itinéraire : ${adresseTexte(ENTREPRISE.adresse)}`, href: itineraireUrl(ENTREPRISE.adresse) },
+  { icone: 'tabler:brand-facebook', texte: 'Facebook', href: ENTREPRISE.facebook },
+];
+const externe = (href: string) => href.startsWith('http');
+---
+
+<WidgetWrapper id="contact" containerClass="max-w-3xl mx-auto">
+  <Headline title="Contact" subtitle="Passez nous voir à l’atelier ou écrivez-nous, on vous répond vite." />
+  <ul class="space-y-4 text-lg">
+    {
+      lignes.map(({ icone, texte, href }) => (
+        <li>
+          <a
+            href={href}
+            class="flex items-center gap-3 hover:text-primary hover:underline"
+            {...(externe(href) ? { target: '_blank', rel: 'noopener' } : {})}
+          >
+            <Icon name={icone} class="h-6 w-6 shrink-0 text-primary" />
+            <span>{texte}</span>
+          </a>
+        </li>
+      ))
+    }
+    <li class="flex items-start gap-3">
+      <Icon name="tabler:clock" class="h-6 w-6 shrink-0 text-primary" />
+      <span>{ENTREPRISE.horaires.texte}<br /><span class="text-muted">{ENTREPRISE.horaires.fermeture}</span></span>
+    </li>
+  </ul>
+</WidgetWrapper>

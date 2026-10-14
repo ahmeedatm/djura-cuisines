@@ -10,6 +10,7 @@ export const ENTREPRISE = {
   nom: 'Djura Cuisines',
   nomTifinagh: 'ⴷⵊⵓⵔⴰ ⵜⵉⴽⵓⵣⵉⵏⵉⵏ',
   accroche: 'Cuisines équipées et dressings sur mesure à Tizi Ouzou',
+  promesse: 'Conception, fabrication et pose.',
   telephone: '+213776312821',
   telephoneAffiche: '+213 776 31 28 21',
   messageDevis: 'Bonjour, je souhaite un devis pour une cuisine / un dressing.',
