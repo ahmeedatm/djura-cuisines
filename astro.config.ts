@@ -46,6 +46,15 @@ export default defineConfig({
       subsets: ['latin'],
       fallbacks: ['sans-serif'],
     },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Noto Sans Tifinagh',
+      cssVariable: '--font-tifinagh',
+      weights: ['400'],
+      styles: ['normal'],
+      subsets: ['tifinagh'],
+      fallbacks: ['sans-serif'],
+    },
   ],
 
   integrations: [
