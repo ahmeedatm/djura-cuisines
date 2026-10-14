@@ -20,7 +20,8 @@
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier -w .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test": "vitest run"
   },
   "dependencies": {
     "@astro-community/astro-embed-twitter": "^0.5.11",
@@ -65,7 +66,8 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.66.0"
+    "typescript-eslint": "^8.66.0",
+    "vitest": "^4.1.11"
   },
   "overrides": {
     "yaml": ">=2.8.3",
