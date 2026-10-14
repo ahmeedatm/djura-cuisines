@@ -1,0 +1,32 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: { contents: read }
+
+concurrency: { group: 'ci-${{ github.ref }}', cancel-in-progress: true }
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - run: npx astro check
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npx astro build --outDir lhci-dist/djura-cuisines
+      - run: npx @lhci/cli@0.15 autorun
+
+  outillage-photos:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: scripts/photos } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync && uv run pytest

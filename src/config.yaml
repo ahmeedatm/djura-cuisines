@@ -1,0 +1,45 @@
+site:
+  name: Djura Cuisines
+  site: 'https://ahmeedatm.github.io'
+  base: '/djura-cuisines'
+  trailingSlash: false
+  googleSiteVerificationId: null
+
+metadata:
+  title:
+    default: Djura Cuisines
+    template: '%s — Djura Cuisines'
+  description: 'Cuisines équipées et dressings sur mesure à Tizi Ouzou. Conception, fabrication et pose. Devis sur WhatsApp.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Djura Cuisines
+    images:
+      - url: '~/assets/images/realisations/cuisine-ilot-marbre-facades-beige.jpg'
+        width: 1200
+        height: 628
+    type: website
+
+i18n:
+  language: fr
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 8
+    post: { isEnabled: false, permalink: '/%slug%', robots: { index: false } }
+    list: { isEnabled: false, pathname: 'blog', robots: { index: false } }
+    category: { isEnabled: false, pathname: 'category', robots: { index: false } }
+    tag: { isEnabled: false, pathname: 'tag', robots: { index: false } }
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'light:only'
